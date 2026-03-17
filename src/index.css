@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 6% 7%;
+    --foreground: 40 20% 95%;
+
+    --card: 240 5% 11%;
+    --card-foreground: 40 20% 95%;
+    --card-elevated: 240 5% 14%;
+
+    --popover: 240 5% 11%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 36 95% 55%;
+    --primary-foreground: 240 6% 7%;
+    --primary-glow: 36 100% 65%;
+
+    --secondary: 240 5% 16%;
+    --secondary-foreground: 40 15% 80%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 50%;
+
+    --accent: 36 95% 55%;
+    --accent-foreground: 240 6% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5% 18%;
+    --input: 240 5% 18%;
+    --ring: 36 95% 55%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(36, 95%, 55%), hsl(28, 100%, 60%));
+    --gradient-card: linear-gradient(145deg, hsl(240, 5%, 12%), hsl(240, 5%, 9%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(36, 95%, 55%, 0.15), transparent 70%);
+    --shadow-card: 0 4px 24px -4px hsl(0, 0%, 0%, 0.5);
+    --shadow-glow: 0 0 40px -10px hsl(36, 95%, 55%, 0.3);
+
+    --sidebar-background: 240 5% 9%;
+    --sidebar-foreground: 40 15% 80%;
+    --sidebar-primary: 36 95% 55%;
+    --sidebar-primary-foreground: 240 6% 7%;
+    --sidebar-accent: 240 5% 14%;
+    --sidebar-accent-foreground: 40 15% 80%;
+    --sidebar-border: 240 5% 18%;
+    --sidebar-ring: 36 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: linear-gradient(145deg, hsl(240, 5%, 12%, 0.8), hsl(240, 5%, 9%, 0.6));
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(240, 5%, 18%, 0.5);
+  }
+
+  .glow-amber {
+    box-shadow: 0 0 40px -10px hsl(36, 95%, 55%, 0.3);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(36, 95%, 55%), hsl(28, 100%, 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
